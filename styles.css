@@ -689,6 +689,10 @@ pre {
   margin: 6px 0 0;
 }
 
+.footer-meta {
+  font-size: 13px;
+}
+
 .site-footer a {
   color: var(--green);
   font-weight: 700;
