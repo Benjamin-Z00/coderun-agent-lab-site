@@ -119,6 +119,7 @@ a {
 }
 
 .hero-section,
+.delivery-hero,
 .audience-section,
 .path-section,
 .projects-section,
@@ -135,6 +136,14 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 0.93fr) minmax(420px, 1.07fr);
   gap: 52px;
+  align-items: center;
+  padding-top: 88px;
+}
+
+.delivery-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(380px, 1.05fr);
+  gap: 48px;
   align-items: center;
   padding-top: 88px;
 }
@@ -338,6 +347,18 @@ pre {
   color: #d6eadb;
   font-size: 13px;
   line-height: 1.7;
+}
+
+.delivery-terminal {
+  overflow: hidden;
+  background: #0c100d;
+  border: 1px solid #27362c;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.delivery-terminal pre {
+  padding: 22px;
 }
 
 .audience-section {
@@ -568,6 +589,67 @@ pre {
   border-top: 1px solid var(--rule);
 }
 
+.delivery-section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.delivery-grid,
+.task-board {
+  display: grid;
+  gap: 16px;
+}
+
+.delivery-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.delivery-grid article,
+.task-board article {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.delivery-grid p,
+.task-board p,
+.final-delivery p {
+  color: var(--muted);
+}
+
+.task-board {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.task-board span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  color: white;
+  background: #18241d;
+  border-radius: 8px;
+  font-weight: 800;
+}
+
+.task-board code {
+  padding: 2px 6px;
+  background: var(--surface-soft);
+  border-radius: 6px;
+  color: var(--ink);
+}
+
+.final-delivery {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--rule);
+}
+
 .price-card {
   display: flex;
   flex-direction: column;
@@ -614,6 +696,7 @@ pre {
 
 @media (max-width: 980px) {
   .hero-section,
+  .delivery-hero,
   .audience-section,
   .outcome-section {
     grid-template-columns: 1fr;
@@ -630,6 +713,8 @@ pre {
   .project-grid,
   .audience-grid,
   .capability-grid,
+  .delivery-grid,
+  .task-board,
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -657,6 +742,7 @@ pre {
   }
 
   .hero-section,
+  .delivery-hero,
   .audience-section,
   .path-section,
   .projects-section,
@@ -678,8 +764,15 @@ pre {
   .project-grid,
   .audience-grid,
   .capability-grid,
+  .delivery-grid,
+  .task-board,
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .final-delivery {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .preview-body {

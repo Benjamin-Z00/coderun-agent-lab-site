@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CodeRun Agent Lab 免费项目包交付页：领取 LLM Gateway Starter，并按第一天任务跑通 AI Agent 工程底座。"
+    />
+    <title>LLM Gateway Starter 免费项目包 | CodeRun Agent Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="CodeRun Agent Lab 首页">
+        <span class="brand-mark">CR</span>
+        <span>CodeRun Agent Lab</span>
+      </a>
+      <nav class="nav-links" aria-label="交付页导航">
+        <a href="#download">项目包</a>
+        <a href="#day-one">第一天任务</a>
+        <a href="#next">下一步</a>
+      </nav>
+      <a class="header-cta" href="https://github.com/Benjamin-Z00/llm-gateway-starter" target="_blank" rel="noopener">打开仓库</a>
+    </header>
+
+    <main>
+      <section class="delivery-hero">
+        <div class="delivery-copy">
+          <p class="eyebrow">项目包已开放</p>
+          <h1>从 LLM Gateway Starter 开始，先跑通一个真实后端项目。</h1>
+          <p class="hero-lead">
+            这份项目包用于验证你是否适合 CodeRun Agent Lab 的自学方式。先完成本地运行、接口测试、结构化输出和作品集记录，再决定是否进入完整路线。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/Benjamin-Z00/llm-gateway-starter" target="_blank" rel="noopener">领取 GitHub 项目包</a>
+            <a class="button button-secondary" href="#day-one">查看第一天任务</a>
+          </div>
+        </div>
+        <div class="delivery-terminal" aria-label="本地启动命令">
+          <div class="preview-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>Quick Start</strong>
+          </div>
+          <pre><code>git clone https://github.com/Benjamin-Z00/llm-gateway-starter.git
+cd llm-gateway-starter
+py -3.12 -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload</code></pre>
+        </div>
+      </section>
+
+      <section id="download" class="delivery-section">
+        <div class="section-heading">
+          <p class="section-label">你会拿到什么</p>
+          <h2>一个能运行、能测试、能继续扩展的 Agent 工程底座。</h2>
+        </div>
+        <div class="delivery-grid">
+          <article>
+            <h3>工程代码</h3>
+            <p>FastAPI 服务、统一模型调用接口、Fake Provider、结构化输出、流式响应和用量统计。</p>
+          </article>
+          <article>
+            <h3>自学任务</h3>
+            <p>7 个任务文档，按“读说明、改代码、跑测试、记录作品集”的方式推进。</p>
+          </article>
+          <article>
+            <h3>作品集模板</h3>
+            <p>README 模板会引导你记录架构、关键接口、测试结果和后续可扩展点。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="day-one" class="delivery-section">
+        <div class="section-heading">
+          <p class="section-label">第一天任务</p>
+          <h2>不要先补理论，先让项目在本地跑起来。</h2>
+        </div>
+        <div class="task-board">
+          <article>
+            <span>01</span>
+            <h3>完成本地启动</h3>
+            <p>启动服务后访问 <code>/health</code>，确认返回正常状态。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>跑通测试</h3>
+            <p>执行 <code>pytest</code>，确认接口、结构化输出、流式响应和用量统计通过。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>完成任务 01</h3>
+            <p>阅读 <code>tasks/01-run-locally.md</code>，把运行截图和问题记录进作品集模板。</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>写 100 字复盘</h3>
+            <p>说明这个 Gateway 为什么是 Agent 项目的底座，以及它后续还能接哪些能力。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="next" class="delivery-section final-delivery">
+        <div>
+          <p class="section-label">下一步</p>
+          <h2>完成后再判断是否进入完整自学路线。</h2>
+          <p>
+            如果你能独立跑通项目、读懂接口边界，并愿意继续做 Tool Runtime、RAG Agent 和 Codebase Agent，
+            那完整路线对你更有价值。
+          </p>
+        </div>
+        <a class="button button-primary" href="./index.html#pricing">查看完整路线</a>
+      </section>
+    </main>
+  </body>
+</html>
