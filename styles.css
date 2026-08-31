@@ -122,6 +122,7 @@ a {
 .audience-section,
 .path-section,
 .projects-section,
+.starter-section,
 .platform-section,
 .outcome-section,
 .pricing-section {
@@ -445,6 +446,59 @@ pre {
   color: #86efac;
 }
 
+.starter-section {
+  padding-top: 0;
+}
+
+.starter-panel {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 26px;
+  padding: 30px;
+  background: #18241d;
+  color: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.starter-copy p:not(.section-label) {
+  max-width: 680px;
+  color: #c5d1c7;
+  font-size: 17px;
+}
+
+.starter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.starter-panel .button-secondary {
+  background: transparent;
+  color: white;
+  border-color: #536358;
+}
+
+.starter-panel .button-secondary:hover {
+  border-color: #91a495;
+}
+
+.starter-includes {
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+}
+
+.starter-includes ul {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding-left: 18px;
+  color: #c5d1c7;
+}
+
 .project-card ul,
 .price-card ul,
 .portfolio-card ol {
@@ -569,6 +623,10 @@ pre {
     max-width: 760px;
   }
 
+  .starter-panel {
+    grid-template-columns: 1fr;
+  }
+
   .project-grid,
   .audience-grid,
   .capability-grid,
@@ -602,6 +660,7 @@ pre {
   .audience-section,
   .path-section,
   .projects-section,
+  .starter-section,
   .outcome-section,
   .pricing-section {
     padding: 52px 18px;
