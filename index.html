@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CodeRun Agent Lab 是面向后端、脚本、运维和测试开发者的 AI Agent 自学实战平台，通过项目闯关、在线练习和自动评测帮助学习者掌握 Agent 工程与 FDE 交付能力。"
+    />
+    <title>CodeRun Agent Lab | AI Agent 自学实战平台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="CodeRun Agent Lab 首页">
+        <span class="brand-mark">CR</span>
+        <span>CodeRun Agent Lab</span>
+      </a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="#path">学习路径</a>
+        <a href="#projects">项目实战</a>
+        <a href="#platform">平台能力</a>
+        <a href="#pricing">定价</a>
+      </nav>
+      <a class="header-cta" href="#pricing">开始自学</a>
+    </header>
+
+    <main id="top">
+      <section class="hero-section">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Agent 自学实战平台</p>
+          <h1>不用等老师讲，按项目路线做出自己的 Agent 作品集。</h1>
+          <p class="hero-lead">
+            面向后端、脚本、运维和测试开发者，用在线 IDE、自动测试、项目验收和交付模板，
+            系统掌握 AI Agent 工程能力，并补齐 FDE 需要的企业落地方法。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#path">查看学习路线</a>
+            <a class="button button-secondary" href="#projects">看项目产出</a>
+          </div>
+          <div class="hero-proof" aria-label="产品关键数据">
+            <div>
+              <strong>5</strong>
+              <span>个核心项目</span>
+            </div>
+            <div>
+              <strong>0</strong>
+              <span>长视频依赖</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>套作品集闭环</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-preview" aria-label="平台界面预览">
+          <div class="preview-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>Agent Lab Workspace</strong>
+          </div>
+          <div class="preview-body">
+            <aside class="preview-sidebar">
+              <span class="active">01 LLM Gateway</span>
+              <span>02 Tool Runtime</span>
+              <span>03 RAG Agent</span>
+              <span>04 Codebase Agent</span>
+              <span>05 FDE PoC Pack</span>
+            </aside>
+            <div class="preview-main">
+              <div class="task-card">
+                <div class="task-meta">
+                  <span>任务 12</span>
+                  <span>自动评测</span>
+                </div>
+                <h2>实现结构化输出重试器</h2>
+                <p>输入 Pydantic Schema，调用模型并在格式错误时自动校验、纠错、重试。</p>
+                <div class="test-list">
+                  <span class="passed">通过 Schema 校验</span>
+                  <span class="passed">记录 Token 成本</span>
+                  <span class="running">等待边界用例</span>
+                </div>
+              </div>
+              <div class="code-panel">
+                <pre><code>class RetryRunner:
+    def run(self, prompt, schema):
+        result = call_model(prompt, schema)
+        return validate_or_retry(result)</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audience-section">
+        <div>
+          <p class="section-label">产品方向</p>
+          <h2>不是录播课，是工程师自己的 Agent 训练场。</h2>
+        </div>
+        <div class="audience-grid">
+          <article>
+            <h3>适合</h3>
+            <p>会基础编程，想转 AI Agent、LLM 应用或 FDE 方向，但不想只看理论课的人。</p>
+          </article>
+          <article>
+            <h3>主打</h3>
+            <p>短文档、任务卡、在线编码、自动测试、项目验收和作品集沉淀。</p>
+          </article>
+          <article>
+            <h3>边界</h3>
+            <p>第一版不承诺包就业，不主打老师陪跑，先把自学闭环做扎实。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="path" class="path-section">
+        <div class="section-heading">
+          <p class="section-label">学习路径</p>
+          <h2>从后端基础迁移到 Agent 工程，再到 FDE 交付。</h2>
+          <p>
+            每一阶段都对应一个可运行项目。学员不是听完一章，而是完成一个被测试和验收的交付物。
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <span>01</span>
+            <div>
+              <h3>Agent 工程底座</h3>
+              <p>Python 工程化、FastAPI、Pydantic、LLM API、Streaming、结构化输出。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span>02</span>
+            <div>
+              <h3>工具调用能力</h3>
+              <p>Function Calling、Tool Registry、权限分级、审计日志、MCP 接入。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span>03</span>
+            <div>
+              <h3>企业知识处理</h3>
+              <p>文档解析、Chunking、Hybrid Search、Rerank、引用溯源、权限过滤。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span>04</span>
+            <div>
+              <h3>长程 Agent 任务</h3>
+              <p>Agent Loop、状态管理、Checkpoint、代码库工具、Sandbox、Trace。</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <span>05</span>
+            <div>
+              <h3>FDE 交付包</h3>
+              <p>PoC 需求、成功指标、Demo 脚本、上线 Checklist、Runbook、复盘报告。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <div class="section-heading">
+          <p class="section-label">项目实战</p>
+          <h2>第一版只围绕 5 个项目，让自学用户有清晰终点。</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-index">Project 01</span>
+            <h3>LLM Gateway</h3>
+            <p>统一模型调用、结构化输出、Streaming、Prompt 模板和成本记录。</p>
+            <ul>
+              <li>可运行 API 服务</li>
+              <li>单元测试与错误重试</li>
+              <li>模型调用成本报表</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="project-index">Project 02</span>
+            <h3>Tool Runtime</h3>
+            <p>让模型安全调用外部工具，并记录权限、参数、结果和审计链路。</p>
+            <ul>
+              <li>工具注册与发现</li>
+              <li>权限分级与人工确认</li>
+              <li>MCP 接入练习</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="project-index">Project 03</span>
+            <h3>CodeRun AI 助教</h3>
+            <p>基于模拟课程资料、FAQ、题目说明和报错样例，交付一个 RAG 答疑 Agent。</p>
+            <ul>
+              <li>引用来源回答</li>
+              <li>问题分类和摘要</li>
+              <li>知识权限过滤</li>
+            </ul>
+          </article>
+          <article class="project-card">
+            <span class="project-index">Project 04</span>
+            <h3>Codebase Agent</h3>
+            <p>搜索代码、读取文件、修改代码、运行测试，并把每一步记录为 Trace。</p>
+            <ul>
+              <li>Agent Loop 实现</li>
+              <li>安全执行边界</li>
+              <li>失败任务 Replay</li>
+            </ul>
+          </article>
+          <article class="project-card featured-project">
+            <span class="project-index">Final Pack</span>
+            <h3>FDE PoC 交付包</h3>
+            <p>把前面项目包装为一个企业 AI 助教 PoC，输出方案、Demo、验收和上线资料。</p>
+            <ul>
+              <li>PoC 需求文档</li>
+              <li>验收标准与 ROI 假设</li>
+              <li>作品集讲解稿</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="platform" class="platform-section">
+        <div class="section-heading">
+          <p class="section-label">平台能力</p>
+          <h2>先做自学闭环，AI 辅导后接入。</h2>
+        </div>
+        <div class="capability-grid">
+          <article>
+            <h3>当前要做</h3>
+            <p>课程地图、题目列表、在线 IDE、运行/提交、测试结果、学习进度、项目验收。</p>
+          </article>
+          <article>
+            <h3>后端部署</h3>
+            <p>Vercel 负责网站、轻 API、用户进度和 AI 辅助；代码执行服务独立部署或接 Judge0/Piston。</p>
+          </article>
+          <article>
+            <h3>AI 接入</h3>
+            <p>先做错误解释、代码 Review、任务提示和项目评审，不做泛聊天机器人。</p>
+          </article>
+        </div>
+        <div class="architecture-panel">
+          <div>
+            <strong>GitHub</strong>
+            <span>代码仓库</span>
+          </div>
+          <i></i>
+          <div>
+            <strong>Vercel</strong>
+            <span>网站 + 轻后端</span>
+          </div>
+          <i></i>
+          <div>
+            <strong>Execution Service</strong>
+            <span>代码运行 + 判题</span>
+          </div>
+          <i></i>
+          <div>
+            <strong>AI Review</strong>
+            <span>解释 + 评审</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcome-section">
+        <div class="outcome-copy">
+          <p class="section-label">最终产出</p>
+          <h2>学完不是“看过课”，而是有一套能展示的 Agent 工程作品。</h2>
+          <p>
+            平台会引导学员把代码、架构图、验收说明、Demo 脚本和复盘报告整理成作品集，
+            面向 AI Agent 开发和 FDE 面试都能讲得清楚。
+          </p>
+        </div>
+        <div class="portfolio-card">
+          <h3>作品集包含</h3>
+          <ol>
+            <li>5 个项目仓库与 README</li>
+            <li>Agent 架构图与 Trace 截图</li>
+            <li>PoC 需求和验收文档</li>
+            <li>面试项目讲解稿</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing-section">
+        <div class="section-heading">
+          <p class="section-label">商业版本</p>
+          <h2>从免费体验到 AI 陪练，按学习闭环收费。</h2>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>免费体验</h3>
+            <p>验证学习方式是否适合自己。</p>
+            <strong>免费</strong>
+            <ul>
+              <li>学习路线预览</li>
+              <li>Python 工程化练习</li>
+              <li>在线 IDE 体验</li>
+            </ul>
+            <a class="button button-secondary" href="mailto:hello@coderun.dev">加入候补</a>
+          </article>
+          <article class="price-card primary-price">
+            <h3>完整自学版</h3>
+            <p>完成 5 个项目，沉淀作品集。</p>
+            <strong>¥699-999</strong>
+            <ul>
+              <li>完整项目路线</li>
+              <li>自动测试与验收</li>
+              <li>项目模板和交付包</li>
+            </ul>
+            <a class="button button-primary" href="mailto:hello@coderun.dev">预约首批</a>
+          </article>
+          <article class="price-card">
+            <h3>AI 陪练版</h3>
+            <p>后期接入 AI 反馈与项目评审。</p>
+            <strong>¥1299+</strong>
+            <ul>
+              <li>错误解释</li>
+              <li>代码 Review</li>
+              <li>作品集评审</li>
+            </ul>
+            <a class="button button-secondary" href="mailto:hello@coderun.dev">了解路线</a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>CodeRun Agent Lab</strong>
+        <p>AI Agent 自学实战平台，后续可接入 CodeRun 在线 IDE 与 AI 项目教练。</p>
+      </div>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
