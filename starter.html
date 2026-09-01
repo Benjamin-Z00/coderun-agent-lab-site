@@ -48,7 +48,8 @@
 cd llm-gateway-starter
 py -3.12 -m venv .venv
 .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -e ".[dev]"
+pytest
 uvicorn app.main:app --reload</code></pre>
         </div>
       </section>
@@ -93,7 +94,7 @@ uvicorn app.main:app --reload</code></pre>
           <article>
             <span>03</span>
             <h3>完成任务 01</h3>
-            <p>阅读 <code>tasks/01-run-locally.md</code>，把运行截图和问题记录进作品集模板。</p>
+            <p>阅读 <code>tasks/01-run-the-service.md</code>，把运行结果和问题记录进作品集模板。</p>
           </article>
           <article>
             <span>04</span>
@@ -112,7 +113,10 @@ uvicorn app.main:app --reload</code></pre>
             那完整路线对你更有价值。
           </p>
         </div>
-        <a class="button button-primary" href="./index.html#pricing">查看完整路线</a>
+        <div class="final-actions">
+          <a class="button button-primary" href="./index.html#pricing">查看完整路线</a>
+          <a class="button button-secondary" href="./index.html#starter">重新领取项目包</a>
+        </div>
       </section>
     </main>
 

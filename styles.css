@@ -121,9 +121,11 @@ a {
 .hero-section,
 .delivery-hero,
 .audience-section,
+.conversion-section,
 .path-section,
 .projects-section,
 .starter-section,
+.fit-section,
 .platform-section,
 .outcome-section,
 .pricing-section {
@@ -369,6 +371,7 @@ pre {
 }
 
 .audience-grid,
+.conversion-grid,
 .capability-grid,
 .pricing-grid {
   display: grid;
@@ -377,10 +380,12 @@ pre {
 }
 
 .audience-grid article,
+.conversion-grid article,
 .capability-grid article,
 .price-card,
 .project-card,
-.portfolio-card {
+.portfolio-card,
+.fit-column {
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: 10px;
@@ -388,11 +393,31 @@ pre {
 }
 
 .audience-grid p,
+.conversion-grid p,
 .capability-grid p,
 .project-card p,
 .price-card p,
-.portfolio-card li {
+.portfolio-card li,
+.fit-column li {
   color: var(--muted);
+}
+
+.conversion-section {
+  padding-top: 0;
+}
+
+.conversion-grid article {
+  min-height: 210px;
+}
+
+.conversion-grid span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .section-heading {
@@ -518,6 +543,28 @@ pre {
   margin: 16px 0 0;
   padding-left: 18px;
   color: #c5d1c7;
+}
+
+.fit-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 0;
+}
+
+.fit-column {
+  min-height: 360px;
+}
+
+.fit-column ul {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 0;
+  padding-left: 18px;
+}
+
+.muted-fit {
+  background: #f0f3ee;
 }
 
 .project-card ul,
@@ -650,6 +697,13 @@ pre {
   border-top: 1px solid var(--rule);
 }
 
+.final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
 .price-card {
   display: flex;
   flex-direction: column;
@@ -702,6 +756,7 @@ pre {
   .hero-section,
   .delivery-hero,
   .audience-section,
+  .fit-section,
   .outcome-section {
     grid-template-columns: 1fr;
   }
@@ -716,6 +771,7 @@ pre {
 
   .project-grid,
   .audience-grid,
+  .conversion-grid,
   .capability-grid,
   .delivery-grid,
   .task-board,
@@ -748,9 +804,11 @@ pre {
   .hero-section,
   .delivery-hero,
   .audience-section,
+  .conversion-section,
   .path-section,
   .projects-section,
   .starter-section,
+  .fit-section,
   .outcome-section,
   .pricing-section {
     padding: 52px 18px;
@@ -767,6 +825,7 @@ pre {
   .hero-proof,
   .project-grid,
   .audience-grid,
+  .conversion-grid,
   .capability-grid,
   .delivery-grid,
   .task-board,
