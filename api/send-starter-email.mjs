@@ -1,33 +1,16 @@
-const RESEND_ENDPOINT = "https://api.resend.com/emails";
-const STARTER_URL = "https://www.syxpanda.com/starter.html";
-const PROGRAM_URL = "https://www.syxpanda.com/#pricing";
-const REPO_URL = "https://github.com/Benjamin-Z00/llm-gateway-starter";
-
-function json(body, init = {}) {
-  return new Response(JSON.stringify(body), {
-    status: init.status || 200,
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-      ...(init.headers || {})
-    }
-  });
-}
-
-function escapeHtml(value) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-function isEmail(value) {
-  return typeof value === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-}
+import {
+  PROGRAM_URL,
+  REPO_URL,
+  STARTER_URL,
+  escapeHtml,
+  getRecipientName,
+  json,
+  parseEmailRequest,
+  sendResendEmail
+} from "./_email-common.mjs";
 
 function buildEmail({ name }) {
-  const rawName = typeof name === "string" && name.trim() ? name.trim() : "同学";
+  const rawName = getRecipientName(name);
   const displayName = escapeHtml(rawName);
 
   return {
@@ -46,7 +29,7 @@ function buildEmail({ name }) {
           <li>Clone 项目并完成本地启动。</li>
           <li>访问 <code>/health</code> 确认服务正常。</li>
           <li>运行 <code>pytest</code> 看测试结果。</li>
-          <li>阅读 <code>tasks/01-run-locally.md</code>，写下 100 字复盘。</li>
+          <li>阅读 <code>tasks/01-run-the-service.md</code>，写下 100 字复盘。</li>
         </ol>
         <div style="margin-top: 28px; padding: 18px; border: 1px solid #d8ded6; border-radius: 10px; background: #f7f8f5;">
           <h2 style="font-size: 18px; margin: 0 0 8px;">完成项目包后，可以继续做什么？</h2>
@@ -56,7 +39,7 @@ function buildEmail({ name }) {
         <p style="color: #657168; font-size: 13px; margin-top: 28px;">你收到这封邮件，是因为你在 CodeRun Agent Lab 表单中填写了领取项目包。</p>
       </div>
     `,
-    text: `${rawName}，你好：\n\n感谢你关注 CodeRun Agent Lab。我们已经收到你的项目包领取申请，下面是 LLM Gateway Starter 的交付入口和第一天学习建议。\n\n交付页：${STARTER_URL}\nGitHub：${REPO_URL}\n\n第一天建议完成：\n1. Clone 项目并完成本地启动。\n2. 访问 /health 确认服务正常。\n3. 运行 pytest 看测试结果。\n4. 阅读 tasks/01-run-locally.md，写下 100 字复盘。\n\n完成项目包后，如果你希望系统完成 Tool Runtime、RAG Agent、Codebase Agent 和 FDE PoC 交付包，可以查看完整自学路线并申请首批自学内测：${PROGRAM_URL}`
+    text: `${rawName}，你好：\n\n感谢你关注 CodeRun Agent Lab。我们已经收到你的项目包领取申请，下面是 LLM Gateway Starter 的交付入口和第一天学习建议。\n\n交付页：${STARTER_URL}\nGitHub：${REPO_URL}\n\n第一天建议完成：\n1. Clone 项目并完成本地启动。\n2. 访问 /health 确认服务正常。\n3. 运行 pytest 看测试结果。\n4. 阅读 tasks/01-run-the-service.md，写下 100 字复盘。\n\n完成项目包后，如果你希望系统完成 Tool Runtime、RAG Agent、Codebase Agent 和 FDE PoC 交付包，可以查看完整自学路线并申请首批自学内测：${PROGRAM_URL}`
   };
 }
 
@@ -82,47 +65,18 @@ export default {
     }
 
     try {
-      const rawBody = await request.text();
-
-      if (rawBody.length > 32_000) {
-        return json({ ok: false, error: "Request body is too large" }, { status: 413 });
+      const parsed = await parseEmailRequest(request);
+      if (parsed.error) {
+        return parsed.error;
       }
 
-      const body = rawBody ? JSON.parse(rawBody) : {};
-      const email = typeof body.email === "string" ? body.email.trim() : "";
-      const name = typeof body.name === "string" ? body.name.trim() : "";
-
-      if (!isEmail(email)) {
-        return json({ ok: false, error: "A valid email is required" }, { status: 400 });
+      const message = buildEmail({ name: parsed.name });
+      const sent = await sendResendEmail({ apiKey, from, to: parsed.email, message });
+      if (!sent.ok) {
+        return sent.response;
       }
 
-      const message = buildEmail({ name });
-      const resendResponse = await fetch(RESEND_ENDPOINT, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-          "User-Agent": "coderun-agent-lab-site/1.0"
-        },
-        body: JSON.stringify({
-          from,
-          to: email,
-          subject: message.subject,
-          html: message.html,
-          text: message.text
-        })
-      });
-
-      const data = await resendResponse.json().catch(() => ({}));
-
-      if (!resendResponse.ok) {
-        return json(
-          { ok: false, error: "Email provider rejected the request", details: data },
-          { status: 502 }
-        );
-      }
-
-      return json({ ok: true, provider: "resend", id: data.id || null });
+      return json({ ok: true, provider: "resend", id: sent.id });
     } catch (error) {
       return json({ ok: false, error: error.message || "Failed to send email" }, { status: 400 });
     }
