@@ -126,6 +126,7 @@ a {
 .projects-section,
 .starter-section,
 .fit-section,
+.program-section,
 .platform-section,
 .outcome-section,
 .pricing-section {
@@ -373,6 +374,7 @@ pre {
 .audience-grid,
 .conversion-grid,
 .capability-grid,
+.program-grid,
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -382,6 +384,7 @@ pre {
 .audience-grid article,
 .conversion-grid article,
 .capability-grid article,
+.program-grid article,
 .price-card,
 .project-card,
 .portfolio-card,
@@ -395,6 +398,7 @@ pre {
 .audience-grid p,
 .conversion-grid p,
 .capability-grid p,
+.program-grid p,
 .project-card p,
 .price-card p,
 .portfolio-card li,
@@ -565,6 +569,82 @@ pre {
 
 .muted-fit {
   background: #f0f3ee;
+}
+
+.program-section {
+  border-top: 1px solid var(--rule);
+}
+
+.program-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.program-summary article {
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+
+.program-summary strong,
+.program-summary span {
+  display: block;
+}
+
+.program-summary strong {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.program-summary span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.program-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.program-grid article {
+  min-height: 360px;
+}
+
+.program-grid span {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.program-grid ul {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding-left: 18px;
+}
+
+.program-delivery {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 16px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 22px;
+  background: #18241d;
+  color: white;
+  border-radius: 12px;
+}
+
+.program-delivery p {
+  margin-bottom: 0;
+  color: #c5d1c7;
 }
 
 .project-card ul,
@@ -773,10 +853,16 @@ pre {
   .audience-grid,
   .conversion-grid,
   .capability-grid,
+  .program-grid,
   .delivery-grid,
   .task-board,
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .program-summary,
+  .program-delivery {
+    grid-template-columns: 1fr 1fr;
   }
 
   .architecture-panel {
@@ -809,6 +895,7 @@ pre {
   .projects-section,
   .starter-section,
   .fit-section,
+  .program-section,
   .outcome-section,
   .pricing-section {
     padding: 52px 18px;
@@ -827,6 +914,9 @@ pre {
   .audience-grid,
   .conversion-grid,
   .capability-grid,
+  .program-grid,
+  .program-summary,
+  .program-delivery,
   .delivery-grid,
   .task-board,
   .pricing-grid {
