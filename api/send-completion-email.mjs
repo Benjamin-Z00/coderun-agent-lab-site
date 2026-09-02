@@ -56,22 +56,22 @@ function buildEmail({ name, intent, pytestResult, taskCount, repoUrl }) {
   const isHighIntent = intent === "愿意参加";
 
   const subject = isHighIntent
-    ? "CodeRun Agent Lab：免费包成果已收到，下一步进入完整路线确认"
+    ? "CodeRun Agent Lab：免费包成果已收到，你也可以直接申请完整路线"
     : "CodeRun Agent Lab：免费包成果提交已收到";
 
   const nextStepHtml = isHighIntent
     ? `
-        <p>你在表单中选择了愿意继续完整自学版。我们会结合你的仓库、测试结果和复盘内容，人工确认是否适合进入首批完整路线。</p>
-        <p>在收到进一步说明前，你可以先查看完整路线页，确认 4 周项目节奏、交付方式和适合人群。</p>
+        <p>你在表单中选择了愿意继续完整自学版。你的提交会帮助我们更快了解你的基础和完成情况，但它不是报名门槛。</p>
+        <p>如果你已经确定要系统学习，可以直接查看完整路线并提交完整自学版申请。</p>
         <p>
-          <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看完整自学路线</a>
+          <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看并申请完整路线</a>
         </p>
       `
     : `
         <p>你已经完成了免费项目包的关键闭环。建议保留好仓库 README、pytest 结果和复盘内容，这些会成为你后续展示 AI Agent 工程能力的第一份材料。</p>
-        <p>如果你准备继续系统完成 LLM Gateway、Tool Runtime、RAG Agent 和 FDE PoC Pack，可以先查看完整自学路线。</p>
+        <p>如果你准备继续系统完成 LLM Gateway、Tool Runtime、RAG Agent 和 FDE PoC Pack，可以直接查看完整自学路线。免费包是体验入口，不是报名门槛。</p>
         <p>
-          <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看完整自学路线</a>
+          <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看并申请完整路线</a>
         </p>
       `;
 
@@ -86,8 +86,8 @@ function buildEmail({ name, intent, pytestResult, taskCount, repoUrl }) {
 
   const resultText = resultItems.length ? `\n\n本次提交记录：\n${resultItems.map((item) => `- ${item}`).join("\n")}` : "";
   const nextStepText = isHighIntent
-    ? `你在表单中选择了愿意继续完整自学版。我们会结合你的仓库、测试结果和复盘内容，人工确认是否适合进入首批完整路线。\n\n完整自学路线：${PROGRAM_URL}`
-    : `你已经完成了免费项目包的关键闭环。建议保留好仓库 README、pytest 结果和复盘内容，这些会成为你后续展示 AI Agent 工程能力的第一份材料。\n\n完整自学路线：${PROGRAM_URL}`;
+    ? `你在表单中选择了愿意继续完整自学版。你的提交会帮助我们更快了解你的基础和完成情况，但它不是报名门槛。如果你已经确定要系统学习，可以直接查看完整路线并提交申请。\n\n完整自学路线：${PROGRAM_URL}`
+    : `你已经完成了免费项目包的关键闭环。建议保留好仓库 README、pytest 结果和复盘内容，这些会成为你后续展示 AI Agent 工程能力的第一份材料。免费包是体验入口，不是报名门槛。\n\n完整自学路线：${PROGRAM_URL}`;
 
   return {
     subject,
