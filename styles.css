@@ -721,6 +721,7 @@ pre {
 }
 
 .program-detail-section,
+.module-section,
 .delivery-catalog-section,
 .week-section,
 .faq-section {
@@ -729,6 +730,7 @@ pre {
 
 .program-detail-grid,
 .catalog-grid,
+.module-grid,
 .faq-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -737,6 +739,7 @@ pre {
 
 .program-detail-grid article,
 .catalog-grid article,
+.module-grid article,
 .week-list article,
 .faq-list article,
 .offer-box {
@@ -758,6 +761,30 @@ pre {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.module-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.module-grid span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.module-grid p {
+  color: var(--muted);
+}
+
+.module-grid strong {
+  display: block;
+  margin-top: 18px;
+  font-size: 24px;
 }
 
 .catalog-grid ul {
@@ -912,7 +939,8 @@ pre {
 
 .delivery-grid,
 .task-board,
-.completion-grid {
+.completion-grid,
+.answer-grid {
   display: grid;
   gap: 16px;
 }
@@ -923,7 +951,8 @@ pre {
 
 .delivery-grid article,
 .task-board article,
-.completion-grid article {
+.completion-grid article,
+.answer-grid article {
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: 10px;
@@ -933,6 +962,7 @@ pre {
 .delivery-grid p,
 .task-board p,
 .completion-grid p,
+.answer-grid p,
 .final-delivery p {
   color: var(--muted);
 }
@@ -964,6 +994,27 @@ pre {
 
 .completion-section {
   border-top: 1px solid var(--rule);
+}
+
+.answer-section {
+  border-top: 1px solid var(--rule);
+}
+
+.answer-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.answer-grid pre {
+  margin-top: 16px;
+  padding: 16px;
+  color: #d6eadb;
+  background: #0c100d;
+  border: 1px solid #27362c;
+  border-radius: 8px;
+}
+
+.answer-grid code {
+  font-size: 13px;
 }
 
 .completion-grid {
@@ -1069,6 +1120,8 @@ pre {
     .delivery-grid,
     .task-board,
     .completion-grid,
+    .answer-grid,
+    .module-grid,
     .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1112,6 +1165,7 @@ pre {
   .fit-section,
   .program-section,
   .program-detail-section,
+  .module-section,
   .delivery-catalog-section,
   .week-section,
   .program-fit-section,
@@ -1141,10 +1195,12 @@ pre {
   .program-delivery,
   .program-detail-grid,
   .catalog-grid,
+  .module-grid,
   .faq-list,
   .delivery-grid,
   .task-board,
   .completion-grid,
+  .answer-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
   }

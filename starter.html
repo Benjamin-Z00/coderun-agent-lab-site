@@ -19,6 +19,7 @@
       <nav class="nav-links" aria-label="交付页导航">
         <a href="#download">Week 0 项目</a>
         <a href="#day-one">启动任务</a>
+        <a href="#answers">参考结果</a>
         <a href="#submit">提交成果</a>
         <a href="#next">下一步</a>
       </nav>
@@ -102,6 +103,71 @@ uvicorn app.main:app --reload</code></pre>
             <span>04</span>
             <h3>写 100 字复盘</h3>
             <p>说明这个 Gateway 为什么是 Agent 项目的底座，以及它后续还能接哪些能力。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="answers" class="delivery-section answer-section">
+        <div class="section-heading">
+          <p class="section-label">Week 0 参考运行结果</p>
+          <h2>自学时先对照这些结果，判断自己是否真的跑通。</h2>
+          <p>
+            这里提供的是验收样例，不是完整讲解。你的结果不需要每个数字完全一致，但状态、字段结构、测试通过数量和 README 记录应该能对上。
+          </p>
+        </div>
+        <div class="answer-grid">
+          <article>
+            <h3>健康检查</h3>
+            <p>启动服务后访问 <code>/health</code>，应该看到服务处于可用状态。</p>
+            <pre><code>{
+  "status": "ok"
+}</code></pre>
+          </article>
+          <article>
+            <h3>接口文档</h3>
+            <p>访问 <code>/docs</code>，应该能看到健康检查、聊天、结构化输出、流式输出和用量统计接口。</p>
+            <pre><code>GET  /health
+POST /v1/chat
+POST /v1/structured
+POST /v1/chat/stream
+GET  /v1/usage</code></pre>
+          </article>
+          <article>
+            <h3>测试结果</h3>
+            <p>执行 <code>pytest</code> 后，核心测试应全部通过；不同机器上的耗时会不一样。</p>
+            <pre><code>collected 5 items
+
+tests/test_gateway.py .....
+
+5 passed</code></pre>
+          </article>
+          <article>
+            <h3>聊天接口</h3>
+            <p>调用 <code>/v1/chat</code> 后，返回里应该包含回答内容、模型名、延迟和成本信息。</p>
+            <pre><code>{
+  "model": "fake-fast",
+  "content": "Gateway response: hello",
+  "input_tokens": 1,
+  "output_tokens": 3,
+  "latency_ms": 12,
+  "cost_cny": 0.000007
+}</code></pre>
+          </article>
+          <article>
+            <h3>作品集记录</h3>
+            <p>README 里至少要能说明你跑通了什么、测试结果是什么、遇到过什么卡点。</p>
+            <pre><code>## Week 0 Result
+- Service: running
+- Tests: passed
+- Endpoint: /v1/chat
+- Reflection: ...</code></pre>
+          </article>
+          <article>
+            <h3>常见不通过</h3>
+            <p>如果遇到依赖、虚拟环境或端口占用问题，先按报错信息定位，不要直接改业务代码。</p>
+            <pre><code>ModuleNotFoundError
+Port already in use
+pytest command not found</code></pre>
           </article>
         </div>
       </section>
