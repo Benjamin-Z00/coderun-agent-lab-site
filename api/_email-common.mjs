@@ -1,6 +1,7 @@
 export const RESEND_ENDPOINT = "https://api.resend.com/emails";
 export const STARTER_URL = "https://www.syxpanda.com/starter.html";
 export const PROGRAM_URL = "https://www.syxpanda.com/#pricing";
+export const PAID_FORM_URL = "https://my.feishu.cn/share/base/shrcnKEqIDfcD7FHOLdER6h8Zbg";
 export const REPO_URL = "https://github.com/Benjamin-Z00/llm-gateway-starter";
 
 export function json(body, init = {}) {
