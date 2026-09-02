@@ -721,12 +721,14 @@ pre {
 }
 
 .program-detail-section,
+.delivery-catalog-section,
 .week-section,
 .faq-section {
   border-top: 1px solid var(--rule);
 }
 
 .program-detail-grid,
+.catalog-grid,
 .faq-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -734,6 +736,7 @@ pre {
 }
 
 .program-detail-grid article,
+.catalog-grid article,
 .week-list article,
 .faq-list article,
 .offer-box {
@@ -747,7 +750,25 @@ pre {
   color: var(--green);
 }
 
+.catalog-grid span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.catalog-grid ul {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-left: 18px;
+}
+
 .program-detail-grid p,
+.catalog-grid li,
 .week-list p,
 .program-fit-section li,
 .offer-section p,
@@ -1091,6 +1112,7 @@ pre {
   .fit-section,
   .program-section,
   .program-detail-section,
+  .delivery-catalog-section,
   .week-section,
   .program-fit-section,
   .offer-section,
@@ -1118,6 +1140,7 @@ pre {
   .program-metrics,
   .program-delivery,
   .program-detail-grid,
+  .catalog-grid,
   .faq-list,
   .delivery-grid,
   .task-board,
