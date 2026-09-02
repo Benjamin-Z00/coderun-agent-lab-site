@@ -28,14 +28,14 @@ function buildEmail({ name }) {
             <li>适合的进入方式和后续开通安排。</li>
           </ol>
         </div>
-        <p>免费项目包不是报名门槛。如果你还没有完成，也可以直接继续申请完整自学版；如果你愿意先体验，LLM Gateway Starter 能帮助你提前熟悉项目制自学方式。</p>
+        <p>Week 0 Starter 不是报名门槛。如果你还没有完成，也可以直接继续申请完整自学版；如果你愿意先体验，Starter 能帮助你提前熟悉 Week 1 LLM Gateway 的工程标准。</p>
         <p>
           <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看完整自学路线</a>
         </p>
         <p style="color: #657168; font-size: 13px; margin-top: 28px;">你收到这封邮件，是因为你在 CodeRun Agent Lab 首批自学内测报名表中提交了邮箱。报名表链接：<a href="${PAID_FORM_URL}">${PAID_FORM_URL}</a></p>
       </div>
     `,
-    text: `${rawName}，你好：\n\n感谢你申请 CodeRun Agent Lab 首批自学内测。我们已经收到你的报名信息，接下来会根据你填写的基础背景、学习目标和报名版本，人工确认适合的进入方式。\n\n后续你会收到：\n1. 首批自学版的完整交付说明。\n2. 4 周项目路线和每周产出要求。\n3. 早鸟名额、价格和后续 AI 陪练版升级说明。\n4. 适合的进入方式和后续开通安排。\n\n免费项目包不是报名门槛。如果你还没有完成，也可以直接继续申请完整自学版；如果你愿意先体验，LLM Gateway Starter 能帮助你提前熟悉项目制自学方式。\n\n完整自学路线：${PROGRAM_URL}\n报名表链接：${PAID_FORM_URL}`
+    text: `${rawName}，你好：\n\n感谢你申请 CodeRun Agent Lab 首批自学内测。我们已经收到你的报名信息，接下来会根据你填写的基础背景、学习目标和报名版本，人工确认适合的进入方式。\n\n后续你会收到：\n1. 首批自学版的完整交付说明。\n2. 4 周项目路线和每周产出要求。\n3. 早鸟名额、价格和后续 AI 陪练版升级说明。\n4. 适合的进入方式和后续开通安排。\n\nWeek 0 Starter 不是报名门槛。如果你还没有完成，也可以直接继续申请完整自学版；如果你愿意先体验，Starter 能帮助你提前熟悉 Week 1 LLM Gateway 的工程标准。\n\n完整自学路线：${PROGRAM_URL}\n报名表链接：${PAID_FORM_URL}`
   };
 }
 

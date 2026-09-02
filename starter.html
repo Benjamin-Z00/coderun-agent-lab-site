@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="CodeRun Agent Lab 免费项目包交付页：领取 LLM Gateway Starter，并按第一天任务跑通 AI Agent 工程底座。"
+      content="CodeRun Agent Lab Week 0 体验项目交付页：领取 LLM Gateway Starter，并跑通完整自学版 Week 1 的最小 AI Agent 工程底座。"
     />
-    <title>LLM Gateway Starter 免费项目包 | CodeRun Agent Lab</title>
+    <title>Week 0 LLM Gateway Starter | CodeRun Agent Lab</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -17,8 +17,8 @@
         <span>CodeRun Agent Lab</span>
       </a>
       <nav class="nav-links" aria-label="交付页导航">
-        <a href="#download">项目包</a>
-        <a href="#day-one">第一天任务</a>
+        <a href="#download">Week 0 项目</a>
+        <a href="#day-one">启动任务</a>
         <a href="#submit">提交成果</a>
         <a href="#next">下一步</a>
       </nav>
@@ -28,14 +28,15 @@
     <main>
       <section class="delivery-hero">
         <div class="delivery-copy">
-          <p class="eyebrow">项目包已开放</p>
-          <h1>从 LLM Gateway Starter 开始，先跑通一个真实后端项目。</h1>
+          <p class="eyebrow">Week 0 体验项目已开放</p>
+          <h1>先用 LLM Gateway Starter，跑通完整路线的最小后端底座。</h1>
           <p class="hero-lead">
-            这份项目包用于验证你是否适合 CodeRun Agent Lab 的自学方式。先完成本地运行、接口测试、结构化输出和作品集记录，再决定是否进入完整路线。
+            Starter 是完整自学版的 Week 0：它不是独立赠品，也不是报名门槛，而是 Week 1 LLM Gateway 的最小可运行版本。
+            先完成本地运行、接口测试、结构化输出和作品集记录，后续进入 Week 1-4 会更顺。
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://github.com/Benjamin-Z00/llm-gateway-starter" target="_blank" rel="noopener">领取 GitHub 项目包</a>
-            <a class="button button-secondary" href="#submit">完成后提交成果</a>
+            <a class="button button-primary" href="https://github.com/Benjamin-Z00/llm-gateway-starter" target="_blank" rel="noopener">打开 Week 0 仓库</a>
+            <a class="button button-secondary" href="./program.html">查看 Week 1-4 完整路线</a>
           </div>
         </div>
         <div class="delivery-terminal" aria-label="本地启动命令">
@@ -57,20 +58,20 @@ uvicorn app.main:app --reload</code></pre>
 
       <section id="download" class="delivery-section">
         <div class="section-heading">
-          <p class="section-label">你会拿到什么</p>
-          <h2>一个能运行、能测试、能继续扩展的 Agent 工程底座。</h2>
+          <p class="section-label">Week 0 拿到什么</p>
+          <h2>一个能运行、能测试、能衔接 Week 1 的 Agent 工程底座。</h2>
         </div>
         <div class="delivery-grid">
           <article>
-            <h3>工程代码</h3>
+            <h3>最小工程代码</h3>
             <p>FastAPI 服务、统一模型调用接口、Fake Provider、结构化输出、流式响应和用量统计。</p>
           </article>
           <article>
-            <h3>自学任务</h3>
+            <h3>Week 0 自学任务</h3>
             <p>7 个任务文档，按“读说明、改代码、跑测试、记录作品集”的方式推进。</p>
           </article>
           <article>
-            <h3>作品集模板</h3>
+            <h3>作品集起点</h3>
             <p>README 模板会引导你记录架构、关键接口、测试结果和后续可扩展点。</p>
           </article>
         </div>
@@ -78,8 +79,8 @@ uvicorn app.main:app --reload</code></pre>
 
       <section id="day-one" class="delivery-section">
         <div class="section-heading">
-          <p class="section-label">第一天任务</p>
-          <h2>不要先补理论，先让项目在本地跑起来。</h2>
+          <p class="section-label">Week 0 启动任务</p>
+          <h2>不要先补理论，先让最小 Gateway 在本地跑起来。</h2>
         </div>
         <div class="task-board">
           <article>
@@ -94,7 +95,7 @@ uvicorn app.main:app --reload</code></pre>
           </article>
           <article>
             <span>03</span>
-            <h3>完成任务 01</h3>
+            <h3>完成 Week 0 任务 01</h3>
             <p>阅读 <code>tasks/01-run-the-service.md</code>，把运行结果和问题记录进作品集模板。</p>
           </article>
           <article>
@@ -107,11 +108,11 @@ uvicorn app.main:app --reload</code></pre>
 
       <section id="submit" class="delivery-section completion-section">
         <div class="section-heading">
-          <p class="section-label">完成证明</p>
-          <h2>跑完测试后可以提交成果，让结果有明确反馈入口。</h2>
+          <p class="section-label">Week 0 完成证明</p>
+          <h2>跑完测试后可以提交成果，让 Week 0 有明确反馈入口。</h2>
           <p>
-            现在免费包先采用本地运行和表单提交的半在线模式。你可以用 pytest 判断代码是否通过，
-            也可以提交仓库链接、测试结果、完成任务数和复盘内容，后续会进入人工判断和 AI Review 的升级路径。
+            现在 Week 0 先采用本地运行和表单提交的半在线模式。你可以用 pytest 判断代码是否通过，
+            也可以提交仓库链接、测试结果、完成任务数和复盘内容，后续会衔接 Week 1-4 和 AI Review 的升级路径。
           </p>
         </div>
         <div class="completion-grid">
@@ -127,12 +128,12 @@ uvicorn app.main:app --reload</code></pre>
           </article>
           <article>
             <span>03</span>
-            <h3>可选进入后续判断</h3>
-            <p>提交成果会帮助我们判断你的完成情况；如果你已经确定要系统学习，也可以直接申请完整自学版。</p>
+            <h3>衔接完整路线</h3>
+            <p>提交成果会帮助我们判断你的 Week 0 完成情况；如果你已经确定要系统学习，也可以直接申请完整自学版。</p>
           </article>
         </div>
         <div class="completion-actions">
-          <a class="button button-primary" href="https://my.feishu.cn/share/base/shrcnXOg0SGGfSEn69WgottZzwb" target="_blank" rel="noopener">提交免费包成果</a>
+          <a class="button button-primary" href="https://my.feishu.cn/share/base/shrcnXOg0SGGfSEn69WgottZzwb" target="_blank" rel="noopener">提交 Week 0 成果</a>
           <a class="button button-secondary" href="./program.html">直接申请完整自学版</a>
         </div>
       </section>
@@ -140,15 +141,15 @@ uvicorn app.main:app --reload</code></pre>
       <section id="next" class="delivery-section final-delivery">
         <div>
           <p class="section-label">下一步</p>
-          <h2>免费包是体验，不是进入完整路线的门槛。</h2>
+          <h2>Week 0 是铺垫，不是进入完整路线的门槛。</h2>
           <p>
-            如果你能独立跑通项目、读懂接口边界，完整路线会更顺；如果你已经确定要系统完成 Tool Runtime、
-            RAG Agent 和 Codebase Agent，也可以直接申请。
+            如果你能独立跑通 Starter、读懂接口边界，Week 1 LLM Gateway 会更顺；如果你已经确定要系统完成 Tool Runtime、
+            RAG Agent 和 FDE PoC Pack，也可以直接申请。
           </p>
         </div>
         <div class="final-actions">
           <a class="button button-primary" href="./program.html">直接申请完整路线</a>
-          <a class="button button-secondary" href="./index.html#starter">重新领取项目包</a>
+          <a class="button button-secondary" href="./index.html#starter">重新领取 Week 0</a>
         </div>
       </section>
     </main>

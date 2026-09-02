@@ -56,20 +56,20 @@ function buildEmail({ name, intent, pytestResult, taskCount, repoUrl }) {
   const isHighIntent = intent === "愿意参加";
 
   const subject = isHighIntent
-    ? "CodeRun Agent Lab：免费包成果已收到，你也可以直接申请完整路线"
-    : "CodeRun Agent Lab：免费包成果提交已收到";
+    ? "CodeRun Agent Lab：Week 0 成果已收到，你也可以直接申请完整路线"
+    : "CodeRun Agent Lab：Week 0 成果提交已收到";
 
   const nextStepHtml = isHighIntent
     ? `
-        <p>你在表单中选择了愿意继续完整自学版。你的提交会帮助我们更快了解你的基础和完成情况，但它不是报名门槛。</p>
-        <p>如果你已经确定要系统学习，可以直接查看完整路线并提交完整自学版申请。</p>
+        <p>你在表单中选择了愿意继续完整自学版。Week 0 成果会帮助我们更快了解你的基础和完成情况，也会自然衔接 Week 1 LLM Gateway，但它不是报名门槛。</p>
+        <p>如果你已经确定要系统学习，可以直接查看完整路线并提交 Week 1-4 完整自学版申请。</p>
         <p>
           <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看并申请完整路线</a>
         </p>
       `
     : `
-        <p>你已经完成了免费项目包的关键闭环。建议保留好仓库 README、pytest 结果和复盘内容，这些会成为你后续展示 AI Agent 工程能力的第一份材料。</p>
-        <p>如果你准备继续系统完成 LLM Gateway、Tool Runtime、RAG Agent 和 FDE PoC Pack，可以直接查看完整自学路线。免费包是体验入口，不是报名门槛。</p>
+        <p>你已经完成了 Week 0 Starter 的关键闭环。建议保留好仓库 README、pytest 结果和复盘内容，这些会成为你后续展示 AI Agent 工程能力的第一份材料。</p>
+        <p>如果你准备继续系统完成 Week 1-4 的 LLM Gateway、Tool Runtime、RAG Agent 和 FDE PoC Pack，可以直接查看完整自学路线。Week 0 是前置体验，不是报名门槛。</p>
         <p>
           <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看并申请完整路线</a>
         </p>
@@ -86,21 +86,21 @@ function buildEmail({ name, intent, pytestResult, taskCount, repoUrl }) {
 
   const resultText = resultItems.length ? `\n\n本次提交记录：\n${resultItems.map((item) => `- ${item}`).join("\n")}` : "";
   const nextStepText = isHighIntent
-    ? `你在表单中选择了愿意继续完整自学版。你的提交会帮助我们更快了解你的基础和完成情况，但它不是报名门槛。如果你已经确定要系统学习，可以直接查看完整路线并提交申请。\n\n完整自学路线：${PROGRAM_URL}`
-    : `你已经完成了免费项目包的关键闭环。建议保留好仓库 README、pytest 结果和复盘内容，这些会成为你后续展示 AI Agent 工程能力的第一份材料。免费包是体验入口，不是报名门槛。\n\n完整自学路线：${PROGRAM_URL}`;
+    ? `你在表单中选择了愿意继续完整自学版。Week 0 成果会帮助我们更快了解你的基础和完成情况，也会自然衔接 Week 1 LLM Gateway，但它不是报名门槛。如果你已经确定要系统学习，可以直接查看完整路线并提交 Week 1-4 完整自学版申请。\n\n完整自学路线：${PROGRAM_URL}`
+    : `你已经完成了 Week 0 Starter 的关键闭环。建议保留好仓库 README、pytest 结果和复盘内容，这些会成为你后续展示 AI Agent 工程能力的第一份材料。Week 0 是前置体验，不是报名门槛。\n\n完整自学路线：${PROGRAM_URL}`;
 
   return {
     subject,
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #17211b; line-height: 1.7; max-width: 640px;">
         <p style="margin: 0 0 12px;">${displayName}，你好：</p>
-        <p>我们已经收到你提交的 CodeRun Agent Lab 免费项目包成果。感谢你完成这次项目闭环，也感谢你把测试结果和复盘信息提交给我们。</p>
+        <p>我们已经收到你提交的 CodeRun Agent Lab Week 0 Starter 成果。感谢你完成这次项目闭环，也感谢你把测试结果和复盘信息提交给我们。</p>
         ${resultHtml}
         ${nextStepHtml}
-        <p style="color: #657168; font-size: 13px; margin-top: 28px;">你收到这封邮件，是因为你在 CodeRun Agent Lab 免费项目包成果提交表中填写了邮箱。免费项目包页面：<a href="${STARTER_URL}">${STARTER_URL}</a></p>
+        <p style="color: #657168; font-size: 13px; margin-top: 28px;">你收到这封邮件，是因为你在 CodeRun Agent Lab Week 0 成果提交表中填写了邮箱。Week 0 页面：<a href="${STARTER_URL}">${STARTER_URL}</a></p>
       </div>
     `,
-    text: `${rawName}，你好：\n\n我们已经收到你提交的 CodeRun Agent Lab 免费项目包成果。感谢你完成这次项目闭环，也感谢你把测试结果和复盘信息提交给我们。${resultText}\n\n${nextStepText}\n\n免费项目包页面：${STARTER_URL}`
+    text: `${rawName}，你好：\n\n我们已经收到你提交的 CodeRun Agent Lab Week 0 Starter 成果。感谢你完成这次项目闭环，也感谢你把测试结果和复盘信息提交给我们。${resultText}\n\n${nextStepText}\n\nWeek 0 页面：${STARTER_URL}`
   };
 }
 
