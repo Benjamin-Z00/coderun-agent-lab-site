@@ -120,6 +120,7 @@ a {
 
 .hero-section,
 .delivery-hero,
+.program-hero,
 .audience-section,
 .conversion-section,
 .path-section,
@@ -127,6 +128,11 @@ a {
 .starter-section,
 .fit-section,
 .program-section,
+.program-detail-section,
+.week-section,
+.program-fit-section,
+.offer-section,
+.faq-section,
 .platform-section,
 .outcome-section,
 .pricing-section {
@@ -149,6 +155,59 @@ a {
   gap: 48px;
   align-items: center;
   padding-top: 88px;
+}
+
+.program-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+  gap: 52px;
+  align-items: center;
+  padding-top: 88px;
+}
+
+.program-console {
+  overflow: hidden;
+  background: #111713;
+  border: 1px solid #27362c;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.program-console-body {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+}
+
+.program-console-body div {
+  padding: 16px;
+  border: 1px solid #2d4033;
+  border-radius: 8px;
+  background: #18211b;
+}
+
+.program-console-body span,
+.week-list span,
+.program-detail-grid span {
+  display: inline-flex;
+  margin-bottom: 10px;
+  color: #86efac;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.program-console-body strong {
+  display: block;
+  color: white;
+  font-size: 20px;
+}
+
+.program-console-body p {
+  margin: 8px 0 0;
+  color: #aebbad;
+  font-size: 14px;
 }
 
 .eyebrow,
@@ -582,7 +641,17 @@ pre {
   margin-bottom: 18px;
 }
 
-.program-summary article {
+.program-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+.program-summary article,
+.program-metrics article {
   padding: 18px;
   background: var(--surface);
   border: 1px solid var(--rule);
@@ -590,16 +659,20 @@ pre {
 }
 
 .program-summary strong,
-.program-summary span {
+.program-summary span,
+.program-metrics strong,
+.program-metrics span {
   display: block;
 }
 
-.program-summary strong {
+.program-summary strong,
+.program-metrics strong {
   font-size: 30px;
   line-height: 1.1;
 }
 
-.program-summary span {
+.program-summary span,
+.program-metrics span {
   margin-top: 6px;
   color: var(--muted);
   font-size: 13px;
@@ -645,6 +718,100 @@ pre {
 .program-delivery p {
   margin-bottom: 0;
   color: #c5d1c7;
+}
+
+.program-detail-section,
+.week-section,
+.faq-section {
+  border-top: 1px solid var(--rule);
+}
+
+.program-detail-grid,
+.faq-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.program-detail-grid article,
+.week-list article,
+.faq-list article,
+.offer-box {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 22px;
+}
+
+.program-detail-grid span {
+  color: var(--green);
+}
+
+.program-detail-grid p,
+.week-list p,
+.program-fit-section li,
+.offer-section p,
+.offer-box li,
+.faq-list p {
+  color: var(--muted);
+}
+
+.week-list {
+  display: grid;
+  gap: 14px;
+}
+
+.week-list article {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 22px;
+}
+
+.week-list span {
+  color: var(--green);
+}
+
+.program-fit-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-top: 0;
+}
+
+.program-fit-section > div {
+  padding: 26px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+
+.program-fit-section ul,
+.offer-box ol {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+  padding-left: 20px;
+}
+
+.offer-section {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+  padding-top: 0;
+}
+
+.offer-box {
+  box-shadow: var(--shadow);
+}
+
+.offer-box strong {
+  display: block;
+  font-size: 22px;
+}
+
+.offer-box .button {
+  margin-top: 22px;
 }
 
 .project-card ul,
@@ -835,13 +1002,17 @@ pre {
 @media (max-width: 980px) {
   .hero-section,
   .delivery-hero,
+  .program-hero,
   .audience-section,
   .fit-section,
+  .program-fit-section,
+  .offer-section,
   .outcome-section {
     grid-template-columns: 1fr;
   }
 
-  .product-preview {
+  .product-preview,
+  .program-console {
     max-width: 760px;
   }
 
@@ -861,6 +1032,7 @@ pre {
   }
 
   .program-summary,
+  .program-metrics,
   .program-delivery {
     grid-template-columns: 1fr 1fr;
   }
@@ -889,6 +1061,7 @@ pre {
 
   .hero-section,
   .delivery-hero,
+  .program-hero,
   .audience-section,
   .conversion-section,
   .path-section,
@@ -896,6 +1069,11 @@ pre {
   .starter-section,
   .fit-section,
   .program-section,
+  .program-detail-section,
+  .week-section,
+  .program-fit-section,
+  .offer-section,
+  .faq-section,
   .outcome-section,
   .pricing-section {
     padding: 52px 18px;
@@ -916,11 +1094,23 @@ pre {
   .capability-grid,
   .program-grid,
   .program-summary,
+  .program-metrics,
   .program-delivery,
+  .program-detail-grid,
+  .faq-list,
   .delivery-grid,
   .task-board,
   .pricing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .program-metrics {
+    padding: 0 18px 34px;
+  }
+
+  .week-list article {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .final-delivery {
