@@ -20,6 +20,7 @@
         <a href="./index.html#starter">Week 0 体验</a>
         <a href="#deliverables">交付内容</a>
         <a href="#delivery-catalog">交付目录</a>
+        <a href="#modules">单周模块</a>
         <a href="#fit">适合人群</a>
         <a href="#faq">常见问题</a>
       </nav>
@@ -234,7 +235,7 @@
         </div>
       </section>
 
-      <section class="module-section">
+      <section id="modules" class="module-section">
         <div class="section-heading">
           <p class="section-label">购买方式</p>
           <h2>主推 4 周完整路线，同时保留 ¥199 单周按需学习。</h2>
@@ -260,6 +261,58 @@
             <h3>后续可补差升级</h3>
             <p>先买单周不锁死路径。如果后续决定做完整作品集，可以按规则补差进入完整路线。</p>
             <strong>降低决策门槛</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="module-detail-section">
+        <div class="section-heading">
+          <p class="section-label">单周交付边界</p>
+          <h2>单周不是拆碎卖资料，而是每周都有独立验收结果。</h2>
+          <p>
+            单周模块适合目标明确的人。每一周都会说明前置要求、交付内容、验收标准和不适合单买的情况，避免用户买完才发现缺前置。
+          </p>
+        </div>
+        <div class="module-detail-grid">
+          <article>
+            <span>Week 1</span>
+            <h3>LLM Gateway</h3>
+            <p>适合想先补模型调用后端的人。从 Week 0 Starter 升级到真实 Provider、错误处理、结构化输出和成本记录。</p>
+            <ul>
+              <li>前置：能跑通 Week 0 或具备 FastAPI 基础。</li>
+              <li>交付：可接真实模型的 Gateway 项目。</li>
+              <li>验收：接口、测试、README 和成本统计可对照。</li>
+            </ul>
+          </article>
+          <article>
+            <span>Week 2</span>
+            <h3>Tool Runtime</h3>
+            <p>适合已经有 LLM 调用基础，想让 Agent 安全调用工具的人。重点是工具注册、参数校验、权限确认和执行日志。</p>
+            <ul>
+              <li>前置：理解 HTTP API 和基本 Schema。</li>
+              <li>交付：可注册、可执行、可审计的工具运行层。</li>
+              <li>验收：工具调用 Trace 和错误样例能说明清楚。</li>
+            </ul>
+          </article>
+          <article>
+            <span>Week 3</span>
+            <h3>RAG Agent</h3>
+            <p>适合想补企业知识问答、引用来源和检索链路的人。不会默认依赖真实公司知识库，用模拟资料完成闭环。</p>
+            <ul>
+              <li>前置：知道 API 调用和基础数据结构。</li>
+              <li>交付：能引用来源回答的知识问答 Agent。</li>
+              <li>验收：回答、引用、检索结果和失败边界可检查。</li>
+            </ul>
+          </article>
+          <article>
+            <span>Week 4</span>
+            <h3>FDE PoC Pack</h3>
+            <p>适合想补企业交付表达的人。重点不是继续堆代码，而是把 Agent 项目包装成需求、Demo、验收和上线材料。</p>
+            <ul>
+              <li>前置：至少有一个可运行的 Agent/LLM 项目。</li>
+              <li>交付：PoC 需求、验收标准、Demo 脚本和复盘报告。</li>
+              <li>验收：能面向业务方讲清场景、价值和边界。</li>
+            </ul>
           </article>
         </div>
       </section>
@@ -298,6 +351,10 @@
           <article>
             <h3>报名后马上付款吗？</h3>
             <p>不需要。先提交申请，我们会根据你的基础背景、学习目标和适合版本发送完整说明。</p>
+          </article>
+          <article>
+            <h3>支付怎么处理？</h3>
+            <p>首批建议先人工确认后收款，再开通资料。等订单稳定后，再做网站内支付模块，接微信支付、支付宝或合规的聚合支付服务。</p>
           </article>
           <article>
             <h3>需要先完成 Week 0 Starter 吗？</h3>

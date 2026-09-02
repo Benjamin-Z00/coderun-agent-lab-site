@@ -722,6 +722,7 @@ pre {
 
 .program-detail-section,
 .module-section,
+.module-detail-section,
 .delivery-catalog-section,
 .week-section,
 .faq-section {
@@ -731,6 +732,7 @@ pre {
 .program-detail-grid,
 .catalog-grid,
 .module-grid,
+.module-detail-grid,
 .faq-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -740,6 +742,7 @@ pre {
 .program-detail-grid article,
 .catalog-grid article,
 .module-grid article,
+.module-detail-grid article,
 .week-list article,
 .faq-list article,
 .offer-box {
@@ -785,6 +788,28 @@ pre {
   display: block;
   margin-top: 18px;
   font-size: 24px;
+}
+
+.module-detail-grid span {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.module-detail-grid p,
+.module-detail-grid li {
+  color: var(--muted);
+}
+
+.module-detail-grid ul {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding-left: 18px;
 }
 
 .catalog-grid ul {
@@ -1122,6 +1147,7 @@ pre {
     .completion-grid,
     .answer-grid,
     .module-grid,
+    .module-detail-grid,
     .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1166,6 +1192,7 @@ pre {
   .program-section,
   .program-detail-section,
   .module-section,
+  .module-detail-section,
   .delivery-catalog-section,
   .week-section,
   .program-fit-section,
@@ -1196,6 +1223,7 @@ pre {
   .program-detail-grid,
   .catalog-grid,
   .module-grid,
+  .module-detail-grid,
   .faq-list,
   .delivery-grid,
   .task-board,
