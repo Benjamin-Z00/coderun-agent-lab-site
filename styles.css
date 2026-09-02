@@ -890,7 +890,8 @@ pre {
 }
 
 .delivery-grid,
-.task-board {
+.task-board,
+.completion-grid {
   display: grid;
   gap: 16px;
 }
@@ -900,7 +901,8 @@ pre {
 }
 
 .delivery-grid article,
-.task-board article {
+.task-board article,
+.completion-grid article {
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: 10px;
@@ -909,6 +911,7 @@ pre {
 
 .delivery-grid p,
 .task-board p,
+.completion-grid p,
 .final-delivery p {
   color: var(--muted);
 }
@@ -917,7 +920,8 @@ pre {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.task-board span {
+.task-board span,
+.completion-grid span {
   display: grid;
   place-items: center;
   width: 42px;
@@ -929,11 +933,27 @@ pre {
   font-weight: 800;
 }
 
-.task-board code {
+.task-board code,
+.completion-grid code {
   padding: 2px 6px;
   background: var(--surface-soft);
   border-radius: 6px;
   color: var(--ink);
+}
+
+.completion-section {
+  border-top: 1px solid var(--rule);
+}
+
+.completion-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.completion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .final-delivery {
@@ -1024,10 +1044,11 @@ pre {
   .audience-grid,
   .conversion-grid,
   .capability-grid,
-  .program-grid,
-  .delivery-grid,
-  .task-board,
-  .pricing-grid {
+    .program-grid,
+    .delivery-grid,
+    .task-board,
+    .completion-grid,
+    .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1100,6 +1121,7 @@ pre {
   .faq-list,
   .delivery-grid,
   .task-board,
+  .completion-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
   }

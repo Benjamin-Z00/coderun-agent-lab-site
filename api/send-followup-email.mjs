@@ -1,4 +1,5 @@
 import {
+  COMPLETION_FORM_URL,
   PROGRAM_URL,
   REPO_URL,
   STARTER_URL,
@@ -37,11 +38,12 @@ function buildDay1Email({ name }) {
         <p>
           <a href="${STARTER_URL}" style="display: inline-block; padding: 12px 18px; background: #1f7a4d; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">继续完成 Day 1 任务</a>
         </p>
+        <p>完成后提交成果：<a href="${COMPLETION_FORM_URL}">${COMPLETION_FORM_URL}</a></p>
         <p>GitHub 仓库：<a href="${REPO_URL}">${REPO_URL}</a></p>
         <p style="color: #657168; font-size: 13px; margin-top: 28px;">如果你已经完成第一步，可以继续看项目包里的自查清单和下一步路线。</p>
       </div>
     `,
-    text: `${rawName}，你好：\n\n昨天你领取了 CodeRun Agent Lab 的 LLM Gateway Starter 项目包。今天建议先完成一个很小但关键的目标：把项目在本地跑起来，并确认测试通过。\n\n今天建议完成：\n1. 打开项目包交付页，进入 GitHub 仓库。\n2. Clone 项目并执行 pytest。\n3. 启动服务后访问 /docs 和 /health。\n4. 在作品集模板里记录测试结果和 100 字复盘。\n\n交付页：${STARTER_URL}\nGitHub：${REPO_URL}`
+    text: `${rawName}，你好：\n\n昨天你领取了 CodeRun Agent Lab 的 LLM Gateway Starter 项目包。今天建议先完成一个很小但关键的目标：把项目在本地跑起来，并确认测试通过。\n\n今天建议完成：\n1. 打开项目包交付页，进入 GitHub 仓库。\n2. Clone 项目并执行 pytest。\n3. 启动服务后访问 /docs 和 /health。\n4. 在作品集模板里记录测试结果和 100 字复盘。\n\n交付页：${STARTER_URL}\nGitHub：${REPO_URL}\n完成后提交成果：${COMPLETION_FORM_URL}`
   };
 }
 
@@ -67,11 +69,12 @@ function buildDay3Email({ name }) {
         <p>
           <a href="${PROGRAM_URL}" style="display: inline-block; padding: 12px 18px; background: #17211b; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">查看完整自学路线</a>
         </p>
+        <p>如果你已经完成免费包，可以提交 GitHub 仓库链接、测试结果和复盘，方便我们判断你的完成情况：<a href="${COMPLETION_FORM_URL}">${COMPLETION_FORM_URL}</a></p>
         <p>项目包交付页：<a href="${STARTER_URL}">${STARTER_URL}</a></p>
         <p style="color: #657168; font-size: 13px; margin-top: 28px;">如果你遇到环境、测试或接口理解上的卡点，可以先对照项目包中的 Troubleshooting 和 Self Check 文档排查。</p>
       </div>
     `,
-    text: `${rawName}，你好：\n\n你领取 LLM Gateway Starter 已经有几天了。如果你已经跑通项目，接下来可以重点思考：这个 Gateway 为什么是 Agent 系统的底层入口。\n\n完成后建议继续做：\n1. 补全作品集 README。\n2. 说明结构化输出、重试和成本统计的业务价值。\n3. 判断自己是否适合继续做 Tool Runtime、RAG Agent 和 FDE PoC。\n\n完整自学路线：${PROGRAM_URL}\n项目包交付页：${STARTER_URL}`
+    text: `${rawName}，你好：\n\n你领取 LLM Gateway Starter 已经有几天了。如果你已经跑通项目，接下来可以重点思考：这个 Gateway 为什么是 Agent 系统的底层入口。\n\n完成后建议继续做：\n1. 补全作品集 README。\n2. 说明结构化输出、重试和成本统计的业务价值。\n3. 判断自己是否适合继续做 Tool Runtime、RAG Agent 和 FDE PoC。\n\n完整自学路线：${PROGRAM_URL}\n项目包交付页：${STARTER_URL}\n完成后提交成果：${COMPLETION_FORM_URL}`
   };
 }
 

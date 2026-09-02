@@ -19,6 +19,7 @@
       <nav class="nav-links" aria-label="交付页导航">
         <a href="#download">项目包</a>
         <a href="#day-one">第一天任务</a>
+        <a href="#submit">提交成果</a>
         <a href="#next">下一步</a>
       </nav>
       <a class="header-cta" href="https://github.com/Benjamin-Z00/llm-gateway-starter" target="_blank" rel="noopener">打开仓库</a>
@@ -34,7 +35,7 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="https://github.com/Benjamin-Z00/llm-gateway-starter" target="_blank" rel="noopener">领取 GitHub 项目包</a>
-            <a class="button button-secondary" href="#day-one">查看第一天任务</a>
+            <a class="button button-secondary" href="#submit">完成后提交成果</a>
           </div>
         </div>
         <div class="delivery-terminal" aria-label="本地启动命令">
@@ -104,6 +105,38 @@ uvicorn app.main:app --reload</code></pre>
         </div>
       </section>
 
+      <section id="submit" class="delivery-section completion-section">
+        <div class="section-heading">
+          <p class="section-label">完成证明</p>
+          <h2>跑完测试后提交成果，让结果有明确反馈入口。</h2>
+          <p>
+            现在免费包先采用本地运行和表单提交的半在线模式。你可以用 pytest 判断代码是否通过，
+            再提交仓库链接、测试结果、完成任务数和复盘内容，后续会进入人工判断和 AI Review 的升级路径。
+          </p>
+        </div>
+        <div class="completion-grid">
+          <article>
+            <span>01</span>
+            <h3>先看本地测试</h3>
+            <p>执行 <code>pytest</code>，全部通过说明核心接口、结构化输出、流式响应和用量统计已经跑通。</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>再提交完成证据</h3>
+            <p>提交 GitHub 仓库链接、测试结果、完成任务数、最大卡点和作品集复盘。</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>进入后续判断</h3>
+            <p>提交后会进入免费包完成视图。如果你愿意继续完整自学版，会被标记为优先跟进。</p>
+          </article>
+        </div>
+        <div class="completion-actions">
+          <a class="button button-primary" href="https://my.feishu.cn/share/base/shrcnXOg0SGGfSEn69WgottZzwb" target="_blank" rel="noopener">提交免费包成果</a>
+          <a class="button button-secondary" href="./program.html">查看 4 周完整自学版</a>
+        </div>
+      </section>
+
       <section id="next" class="delivery-section final-delivery">
         <div>
           <p class="section-label">下一步</p>
@@ -114,7 +147,7 @@ uvicorn app.main:app --reload</code></pre>
           </p>
         </div>
         <div class="final-actions">
-          <a class="button button-primary" href="./index.html#pricing">查看完整路线</a>
+          <a class="button button-primary" href="./program.html">查看完整路线</a>
           <a class="button button-secondary" href="./index.html#starter">重新领取项目包</a>
         </div>
       </section>

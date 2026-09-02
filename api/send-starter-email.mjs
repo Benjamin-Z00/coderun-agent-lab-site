@@ -1,4 +1,5 @@
 import {
+  COMPLETION_FORM_URL,
   PROGRAM_URL,
   REPO_URL,
   STARTER_URL,
@@ -31,6 +32,10 @@ function buildEmail({ name }) {
           <li>运行 <code>pytest</code> 看测试结果。</li>
           <li>阅读 <code>tasks/01-run-the-service.md</code>，写下 100 字复盘。</li>
         </ol>
+        <p>完成后可以提交 GitHub 仓库链接、测试结果和复盘，我们会根据提交内容判断是否需要进一步跟进。</p>
+        <p>
+          <a href="${COMPLETION_FORM_URL}" style="display: inline-block; padding: 10px 16px; background: #1f7a4d; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700;">提交免费包成果</a>
+        </p>
         <div style="margin-top: 28px; padding: 18px; border: 1px solid #d8ded6; border-radius: 10px; background: #f7f8f5;">
           <h2 style="font-size: 18px; margin: 0 0 8px;">完成项目包后，可以继续做什么？</h2>
           <p style="margin: 0 0 14px;">如果你希望系统完成 Tool Runtime、RAG Agent、Codebase Agent 和 FDE PoC 交付包，可以查看完整自学路线，并申请首批自学内测。</p>
@@ -39,7 +44,7 @@ function buildEmail({ name }) {
         <p style="color: #657168; font-size: 13px; margin-top: 28px;">你收到这封邮件，是因为你在 CodeRun Agent Lab 表单中填写了领取项目包。</p>
       </div>
     `,
-    text: `${rawName}，你好：\n\n感谢你关注 CodeRun Agent Lab。我们已经收到你的项目包领取申请，下面是 LLM Gateway Starter 的交付入口和第一天学习建议。\n\n交付页：${STARTER_URL}\nGitHub：${REPO_URL}\n\n第一天建议完成：\n1. Clone 项目并完成本地启动。\n2. 访问 /health 确认服务正常。\n3. 运行 pytest 看测试结果。\n4. 阅读 tasks/01-run-the-service.md，写下 100 字复盘。\n\n完成项目包后，如果你希望系统完成 Tool Runtime、RAG Agent、Codebase Agent 和 FDE PoC 交付包，可以查看完整自学路线并申请首批自学内测：${PROGRAM_URL}`
+    text: `${rawName}，你好：\n\n感谢你关注 CodeRun Agent Lab。我们已经收到你的项目包领取申请，下面是 LLM Gateway Starter 的交付入口和第一天学习建议。\n\n交付页：${STARTER_URL}\nGitHub：${REPO_URL}\n\n第一天建议完成：\n1. Clone 项目并完成本地启动。\n2. 访问 /health 确认服务正常。\n3. 运行 pytest 看测试结果。\n4. 阅读 tasks/01-run-the-service.md，写下 100 字复盘。\n\n完成后提交 GitHub 仓库链接、测试结果和复盘：${COMPLETION_FORM_URL}\n\n完成项目包后，如果你希望系统完成 Tool Runtime、RAG Agent、Codebase Agent 和 FDE PoC 交付包，可以查看完整自学路线并申请首批自学内测：${PROGRAM_URL}`
   };
 }
 
