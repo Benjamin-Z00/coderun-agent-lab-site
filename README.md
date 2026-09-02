@@ -30,9 +30,11 @@ Vercel 不适合作为任意用户代码执行沙箱。
 
 ```text
 POST /api/send-starter-email
+POST /api/send-paid-application-email
 ```
 
 用途：飞书表单新增记录后，调用该接口，把免费项目包交付页发到用户填写的邮箱。
+其中 `send-paid-application-email` 用于完整路线或单周模块报名确认。
 
 ### Vercel 环境变量
 
@@ -64,6 +66,22 @@ Body:
 {
   "email": "引用表单里的邮箱字段",
   "name": "引用表单里的姓名或者称呼字段"
+}
+```
+
+完整路线或单周模块报名表可调用：
+
+```text
+Method: POST
+URL: https://www.syxpanda.com/api/send-paid-application-email
+Header:
+  Content-Type: application/json
+  X-Delivery-Secret: 你的随机密钥
+Body:
+{
+  "email": "引用表单里的邮箱字段",
+  "name": "引用表单里的姓名或者称呼字段",
+  "plan": "引用报名版本字段，例如 4 周完整自学版 / Week 1 LLM Gateway / Week 2 Tool Runtime / Week 3 RAG Agent / Week 4 FDE PoC Pack"
 }
 ```
 

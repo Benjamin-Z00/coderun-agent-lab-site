@@ -44,7 +44,7 @@ export async function parseEmailRequest(request) {
     return { error: json({ ok: false, error: "A valid email is required" }, { status: 400 }) };
   }
 
-  return { email, name, template };
+  return { email, name, template, extra: body };
 }
 
 export async function sendResendEmail({ apiKey, from, to, message }) {
